@@ -1,0 +1,41 @@
+<h1 class="mt-2">Pokemons</h1>
+
+<ul class="nav nav-tabs">
+  <!-- Tab-Pokemons -->
+  <li class="nav-item" (click)="currentTab = 'tab-pokemons'">
+    <a
+      class="nav-link"
+      [ngClass]="{ active: currentTab === 'tab-pokemons' }"
+      href="#"
+      >Pokemons</a
+    >
+  </li>
+  <!-- Tab-Favorites -->
+  <li class="nav-item" (click)="currentTab = 'tab-favorites'">
+    <a
+      class="nav-link"
+      [ngClass]="{ active: currentTab === 'tab-favorites' }"
+      href="#"
+      >Favorites</a
+    >
+  </li>
+</ul>
+
+<div class="row mt-5">
+  <div
+    class="card col-4"
+    *ngFor="let pokemon of pokemons; let i = index"
+    style="cursor: pointer"
+  >
+    <div class="card-body">
+      <img
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
+          i + 1
+        }}.png"
+        class="card-img-top"
+        alt="..."
+      />
+      <p class="card-text">Pokemon</p>
+    </div>
+  </div>
+</div>
